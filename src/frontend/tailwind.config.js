@@ -4,7 +4,7 @@ import animate from 'tailwindcss-animate';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    darkMode: ['class'],
+    darkMode: false,
     content: ['index.html', 'src/**/*.{js,ts,jsx,tsx,html,css}'],
     theme: {
         container: {
@@ -16,53 +16,45 @@ export default {
         },
         extend: {
             colors: {
-                border: 'oklch(var(--border))',
-                input: 'oklch(var(--input))',
-                ring: 'oklch(var(--ring) / <alpha-value>)',
-                background: 'oklch(var(--background))',
-                foreground: 'oklch(var(--foreground))',
+                border: '#1e3a5f',
+                input: '#1e3a5f',
+                ring: '#E8AE20',
+                background: '#0D1E35',
+                foreground: '#ffffff',
                 primary: {
-                    DEFAULT: 'oklch(var(--primary) / <alpha-value>)',
-                    foreground: 'oklch(var(--primary-foreground))'
+                    DEFAULT: '#E8AE20',
+                    foreground: '#0D1E35'
                 },
                 secondary: {
-                    DEFAULT: 'oklch(var(--secondary) / <alpha-value>)',
-                    foreground: 'oklch(var(--secondary-foreground))'
+                    DEFAULT: '#1a2f50',
+                    foreground: '#ffffff'
                 },
                 destructive: {
-                    DEFAULT: 'oklch(var(--destructive) / <alpha-value>)',
-                    foreground: 'oklch(var(--destructive-foreground))'
+                    DEFAULT: '#c0392b',
+                    foreground: '#ffffff'
                 },
                 muted: {
-                    DEFAULT: 'oklch(var(--muted) / <alpha-value>)',
-                    foreground: 'oklch(var(--muted-foreground) / <alpha-value>)'
+                    DEFAULT: '#1a2f50',
+                    foreground: '#cbd5e1'
                 },
                 accent: {
-                    DEFAULT: 'oklch(var(--accent) / <alpha-value>)',
-                    foreground: 'oklch(var(--accent-foreground))'
+                    DEFAULT: '#1a2f50',
+                    foreground: '#ffffff'
                 },
                 popover: {
-                    DEFAULT: 'oklch(var(--popover))',
-                    foreground: 'oklch(var(--popover-foreground))'
+                    DEFAULT: '#122040',
+                    foreground: '#ffffff'
                 },
                 card: {
-                    DEFAULT: 'oklch(var(--card))',
-                    foreground: 'oklch(var(--card-foreground))'
+                    DEFAULT: '#122040',
+                    foreground: '#ffffff'
                 },
-                chart: {
-                    1: 'oklch(var(--chart-1))',
-                    2: 'oklch(var(--chart-2))',
-                    3: 'oklch(var(--chart-3))',
-                    4: 'oklch(var(--chart-4))',
-                    5: 'oklch(var(--chart-5))'
-                },
-                // Custom INOVICS logo-matched colors
                 navy: {
-                    DEFAULT: 'oklch(var(--navy))',
-                    dark: 'oklch(var(--navy-dark))'
+                    DEFAULT: '#0D1E35',
+                    dark: '#08121F'
                 },
-                charcoal: 'oklch(var(--charcoal))',
-                'accent-yellow': 'oklch(var(--accent-yellow) / <alpha-value>)'
+                charcoal: '#0f1d2e',
+                'accent-yellow': '#E8AE20'
             },
             borderRadius: {
                 lg: 'var(--radius)',
@@ -73,15 +65,7 @@ export default {
                 xs: '0 1px 2px 0 rgba(0,0,0,0.05)'
             },
             fontFamily: {
-                sans: [
-                    'Inter',
-                    'system-ui',
-                    '-apple-system',
-                    'BlinkMacSystemFont',
-                    'Segoe UI',
-                    'Roboto',
-                    'sans-serif'
-                ]
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif']
             },
             keyframes: {
                 'accordion-down': {

@@ -3,81 +3,161 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --radius: 0.625rem;
-        --background: 1 0 0;
-        --foreground: 0.145 0 0;
-        --card: 1 0 0;
-        --card-foreground: 0.145 0 0;
-        --popover: 1 0 0;
-        --popover-foreground: 0.145 0 0;
-        --primary: 0.205 0 0;
-        --primary-foreground: 0.985 0 0;
-        --secondary: 0.97 0 0;
-        --secondary-foreground: 0.205 0 0;
-        --muted: 0.97 0 0;
-        --muted-foreground: 0.556 0 0;
-        --accent: 0.97 0 0;
-        --accent-foreground: 0.205 0 0;
-        --destructive: 0.577 0.245 27.325;
-        --destructive-foreground: 0.985 0 0;
-        --border: 0.922 0 0;
-        --input: 0.922 0 0;
-        --ring: 0.708 0 0;
-        --chart-1: 0.646 0.222 41.116;
-        --chart-2: 0.6 0.118 184.704;
-        --chart-3: 0.398 0.07 227.392;
-        --chart-4: 0.828 0.189 84.429;
-        --chart-5: 0.769 0.188 70.08;
-        --sidebar: 0.985 0 0;
-        --sidebar-foreground: 0.145 0 0;
-        --sidebar-primary: 0.205 0 0;
-        --sidebar-primary-foreground: 0.985 0 0;
-        --sidebar-accent: 0.97 0 0;
-        --sidebar-accent-foreground: 0.205 0 0;
-        --sidebar-border: 0.922 0 0;
-        --sidebar-ring: 0.708 0 0;
-    }
+  :root {
+    --radius: 0.5rem;
+    --background: #0D1E35;
+    --foreground: #ffffff;
+    --card: #122040;
+    --card-foreground: #ffffff;
+    --popover: #122040;
+    --popover-foreground: #ffffff;
+    --primary: #E8AE20;
+    --primary-foreground: #0D1E35;
+    --secondary: #1a2f50;
+    --secondary-foreground: #ffffff;
+    --muted: #1a2f50;
+    --muted-foreground: #cbd5e1;
+    --accent: #1a2f50;
+    --accent-foreground: #ffffff;
+    --destructive: #c0392b;
+    --destructive-foreground: #ffffff;
+    --border: #1e3a5f;
+    --input: #1e3a5f;
+    --ring: #E8AE20;
+  }
 
-    .dark {
-        --background: 0.145 0 0;
-        --foreground: 0.985 0 0;
-        --card: 0.205 0 0;
-        --card-foreground: 0.985 0 0;
-        --popover: 0.269 0 0;
-        --popover-foreground: 0.985 0 0;
-        --primary: 0.922 0 0;
-        --primary-foreground: 0.205 0 0;
-        --secondary: 0.269 0 0;
-        --secondary-foreground: 0.985 0 0;
-        --muted: 0.269 0 0;
-        --muted-foreground: 0.708 0 0;
-        --accent: 0.371 0 0;
-        --accent-foreground: 0.985 0 0;
-        --destructive: 0.704 0.191 22.216;
-        --destructive-foreground: 0.205 0 0;
-        --border: 1 0 0 / 10%;
-        --input: 1 0 0 / 15%;
-        --ring: 0.556 0 0;
-        --chart-1: 0.488 0.243 264.376;
-        --chart-2: 0.696 0.17 162.48;
-        --chart-3: 0.769 0.188 70.08;
-        --chart-4: 0.627 0.265 303.9;
-        --chart-5: 0.645 0.246 16.439;
-        --sidebar: 0.205 0 0;
-        --sidebar-foreground: 0.985 0 0;
-        --sidebar-primary: 0.488 0.243 264.376;
-        --sidebar-primary-foreground: 0.985 0 0;
-        --sidebar-accent: 0.269 0 0;
-        --sidebar-accent-foreground: 0.985 0 0;
-        --sidebar-border: 1 0 0 / 10%;
-        --sidebar-ring: 0.439 0 0;
-    }
+  * {
+    border-color: #1e3a5f;
+    box-sizing: border-box;
+  }
 
-    * {
-        @apply border-border;
+  html {
+    background-color: #0D1E35;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0D1E35 !important;
+    color: #ffffff !important;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #E8AE20 !important;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  p {
+    color: #ffffff;
+    line-height: 1.7;
+  }
+
+  span, li, td, th, label {
+    color: #ffffff;
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #E8AE20;
+  }
+
+  /* Force all light-themed backgrounds to navy */
+  .bg-white,
+  .bg-gray-50, .bg-gray-100, .bg-gray-200,
+  .bg-slate-50, .bg-slate-100, .bg-slate-200,
+  .bg-zinc-50, .bg-zinc-100,
+  .bg-neutral-50, .bg-neutral-100 {
+    background-color: #122040 !important;
+    color: #ffffff !important;
+  }
+
+  /* Eliminate grey text — everything is white */
+  .text-gray-400, .text-gray-500, .text-gray-600,
+  .text-gray-700, .text-gray-800, .text-gray-900,
+  .text-slate-400, .text-slate-500, .text-slate-600,
+  .text-slate-700, .text-slate-800, .text-slate-900,
+  .text-zinc-400, .text-zinc-500, .text-zinc-600,
+  .text-zinc-700, .text-zinc-800, .text-zinc-900,
+  .text-neutral-400, .text-neutral-500, .text-neutral-600,
+  .text-neutral-700, .text-neutral-800, .text-neutral-900,
+  .text-black {
+    color: #ffffff !important;
+  }
+
+  .text-foreground {
+    color: #ffffff !important;
+  }
+
+  /* Muted text stays readable, not grey */
+  .text-muted-foreground {
+    color: #cbd5e1 !important;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer utilities {
+  .decorative-visual {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .process-punchline {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+    border-left: 4px solid rgba(232, 174, 32, 0.4);
+    background-color: rgba(232, 174, 32, 0.05);
+  }
+
+  .process-investment-block {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(232, 174, 32, 0.1);
+    border: 2px solid rgba(232, 174, 32, 0.3);
+  }
+
+  .standard-bullet {
+    margin-top: 0.125rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 9999px;
+    background-color: #E8AE20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .standard-bullet svg {
+    color: #0D1E35;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
-    body {
-        @apply bg-background text-foreground;
-    }
+  }
 }

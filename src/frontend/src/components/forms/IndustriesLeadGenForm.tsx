@@ -99,10 +99,10 @@ ${formData.operationalBottleneck}`;
         <p className="text-sm text-muted-foreground">
           If nothing opened, email us at{" "}
           <a
-            href="mailto:contact@weareinovics.com"
+            href="mailto:rakesh@weareinovics.com"
             className="text-accent-yellow underline"
           >
-            contact@weareinovics.com
+            rakesh@weareinovics.com
           </a>
         </p>
         <Button

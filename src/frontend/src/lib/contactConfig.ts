@@ -16,7 +16,7 @@ export const CONTACT_CONFIG = {
 };
 
 // Centralized contact information
-export const CONTACT_EMAIL = "contact@weareinovics.com";
+export const CONTACT_EMAIL = "rakesh@weareinovics.com";
 export const CONTACT_PHONE_DISPLAY = "+ 91-9322286441";
 export const CONTACT_PHONE_TEL = "tel:+919322286441";
 export const CONTACT_ADDRESS =

@@ -32,12 +32,9 @@ export function AdminManagementCard() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Clear previous messages
     setSuccessMessage(null);
     setErrorMessage(null);
 
-    // Validate input
     const trimmedInput = principalInput.trim();
     if (!trimmedInput) {
       setErrorMessage("Please enter a Principal ID.");
@@ -63,14 +60,12 @@ export function AdminManagementCard() {
     try {
       const targetPrincipal = Principal.fromText(trimmedInput);
       await actor.grantAdminPrivileges(targetPrincipal);
-
       setSuccessMessage(
         `Admin privileges successfully granted to ${trimmedInput}`,
       );
       setPrincipalInput("");
     } catch (error: any) {
       console.error("Grant admin error:", error);
-
       if (error.message?.includes("Unauthorized")) {
         setErrorMessage(
           "You do not have permission to grant admin privileges. Only admins can perform this action.",
@@ -117,8 +112,8 @@ export function AdminManagementCard() {
           </div>
 
           {successMessage && (
-            <Alert className="border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-100">
-              <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
+            <Alert className="border-green-500 bg-green-900/30 text-white">
+              <CheckCircle2 className="h-4 w-4 text-green-400" />
               <AlertTitle>Success</AlertTitle>
               <AlertDescription>{successMessage}</AlertDescription>
             </Alert>

@@ -39,7 +39,7 @@ export function AdminTokenRestoreCard({
     try {
       await onTokenSubmit(token.trim());
       setSuccess(true);
-      setToken(""); // Clear the input after successful submission
+      setToken("");
     } catch (err: any) {
       if (err.message?.includes("already been initialized")) {
         setError(
@@ -98,8 +98,8 @@ export function AdminTokenRestoreCard({
           )}
 
           {success && (
-            <Alert className="border-green-500 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-100">
-              <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400" />
+            <Alert className="border-green-500 bg-green-900/30 text-white">
+              <CheckCircle2 className="h-4 w-4 text-green-400" />
               <AlertDescription>
                 Admin access granted successfully! Refreshing dashboard...
               </AlertDescription>
