@@ -22,11 +22,21 @@ import { IndustriesPage } from "./pages/IndustriesPage";
 import { InsightsPage } from "./pages/InsightsPage";
 import { ProcessPage } from "./pages/ProcessPage";
 import { StrategySessionPage } from "./pages/StrategySessionPage";
+import { BusinessGrowthInfrastructurePage } from "./pages/insights/BusinessGrowthInfrastructurePage";
+import { BusinessOperationalMaturityPage } from "./pages/insights/BusinessOperationalMaturityPage";
 import { CanYourBusinessRunWithoutYouPage } from "./pages/insights/CanYourBusinessRunWithoutYouPage";
 import { CrmVsErpWhatGrowingSmesActuallyNeedPage } from "./pages/insights/CrmVsErpWhatGrowingSmesActuallyNeedPage";
 import { ExcelIsNotABusinessSystemPage } from "./pages/insights/ExcelIsNotABusinessSystemPage";
+import { FoundersPlaybookScalingPage } from "./pages/insights/FoundersPlaybookScalingPage";
 import { FromFounderDrivenToSystemDrivenPage } from "./pages/insights/FromFounderDrivenToSystemDrivenPage";
+import { HowCompaniesScaleEffectivelyPage } from "./pages/insights/HowCompaniesScaleEffectivelyPage";
+import { HowToScaleABusinessWithoutChaosPage } from "./pages/insights/HowToScaleABusinessWithoutChaosPage";
+import { HowToScaleOperationsPage } from "./pages/insights/HowToScaleOperationsPage";
+import { OperationalExcellenceForSmesPage } from "./pages/insights/OperationalExcellenceForSmesPage";
+import { SystemsThinkingForBusinessPage } from "./pages/insights/SystemsThinkingForBusinessPage";
 import { TheHiddenCostOfManualReportingPage } from "./pages/insights/TheHiddenCostOfManualReportingPage";
+import { TheModernBusinessOperatingModelPage } from "./pages/insights/TheModernBusinessOperatingModelPage";
+import { TheScalingOperationsFrameworkPage } from "./pages/insights/TheScalingOperationsFrameworkPage";
 import { WhyGrowthBreaksWeakInfrastructurePage } from "./pages/insights/WhyGrowthBreaksWeakInfrastructurePage";
 import {
   INSIGHT_SLUGS,
@@ -46,7 +56,6 @@ function App() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
-  // Check if we're on a standalone page
   const isControlFrameworkPage = currentPath === "/control-framework";
   const isIndustriesPage = currentPath === "/industries";
   const isProcessPage = currentPath === "/process";
@@ -56,15 +65,22 @@ function App() {
   const isFaqPage = currentPath === "/faq";
   const isInsightsHubPage = currentPath === "/insights";
 
-  // Check for insight article pages
   const insightSlugMatch = currentPath.match(/^\/insights\/(.+)$/);
   const insightSlug = insightSlugMatch ? insightSlugMatch[1] : null;
   const isInsightArticlePage = insightSlug && isValidInsightSlug(insightSlug);
 
-  // Render insight article pages
   if (isInsightArticlePage && insightSlug) {
     let ArticleComponent: ComponentType | null = null;
     switch (insightSlug) {
+      case INSIGHT_SLUGS.FOUNDERS_PLAYBOOK_SCALING:
+        ArticleComponent = FoundersPlaybookScalingPage;
+        break;
+      case INSIGHT_SLUGS.HOW_COMPANIES_SCALE_EFFECTIVELY:
+        ArticleComponent = HowCompaniesScaleEffectivelyPage;
+        break;
+      case INSIGHT_SLUGS.HOW_TO_SCALE_A_BUSINESS_WITHOUT_CHAOS:
+        ArticleComponent = HowToScaleABusinessWithoutChaosPage;
+        break;
       case INSIGHT_SLUGS.EXCEL_IS_NOT_A_BUSINESS_SYSTEM:
         ArticleComponent = ExcelIsNotABusinessSystemPage;
         break;
@@ -83,6 +99,27 @@ function App() {
       case INSIGHT_SLUGS.CAN_YOUR_BUSINESS_RUN_WITHOUT_YOU:
         ArticleComponent = CanYourBusinessRunWithoutYouPage;
         break;
+      case INSIGHT_SLUGS.OPERATIONAL_EXCELLENCE_FOR_SMES:
+        ArticleComponent = OperationalExcellenceForSmesPage;
+        break;
+      case INSIGHT_SLUGS.BUSINESS_OPERATIONAL_MATURITY:
+        ArticleComponent = BusinessOperationalMaturityPage;
+        break;
+      case INSIGHT_SLUGS.HOW_TO_SCALE_OPERATIONS:
+        ArticleComponent = HowToScaleOperationsPage;
+        break;
+      case INSIGHT_SLUGS.SYSTEMS_THINKING_FOR_BUSINESS:
+        ArticleComponent = SystemsThinkingForBusinessPage;
+        break;
+      case INSIGHT_SLUGS.THE_SCALING_OPERATIONS_FRAMEWORK:
+        ArticleComponent = TheScalingOperationsFrameworkPage;
+        break;
+      case INSIGHT_SLUGS.BUSINESS_GROWTH_INFRASTRUCTURE:
+        ArticleComponent = BusinessGrowthInfrastructurePage;
+        break;
+      case INSIGHT_SLUGS.THE_MODERN_BUSINESS_OPERATING_MODEL:
+        ArticleComponent = TheModernBusinessOperatingModelPage;
+        break;
       default:
         ArticleComponent = null;
     }
@@ -99,7 +136,6 @@ function App() {
     }
   }
 
-  // Render insights hub page
   if (isInsightsHubPage) {
     return (
       <div className="min-h-screen bg-background">
@@ -111,7 +147,6 @@ function App() {
     );
   }
 
-  // Render standalone pages
   if (isControlFrameworkPage) {
     return (
       <div className="min-h-screen bg-background">
@@ -189,7 +224,6 @@ function App() {
     );
   }
 
-  // Render homepage
   return (
     <div className="min-h-screen bg-background">
       <TopNav />

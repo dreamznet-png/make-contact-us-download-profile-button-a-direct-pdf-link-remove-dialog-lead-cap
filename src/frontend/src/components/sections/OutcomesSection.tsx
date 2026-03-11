@@ -1,4 +1,5 @@
 import { StandardBulletList } from "@/components/shared/StandardBulletList";
+import outcomesDashboard from "/assets/generated/outcomes-dashboard-transformation.dim_1200x800.jpg";
 
 export function OutcomesSection() {
   return (
@@ -31,8 +32,8 @@ export function OutcomesSection() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden border-2 border-border shadow-2xl">
               <img
-                src="/assets/generated/inovics-dashboard-mockup-logo-palette.dim_1200x800.png"
-                alt="Inovics Business Operating System Dashboard"
+                src={outcomesDashboard}
+                alt="Inovics Business Transformation Dashboard"
                 className="w-full h-full object-cover"
               />
             </div>

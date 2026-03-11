@@ -4,6 +4,10 @@ import { StandardBulletList } from "@/components/shared/StandardBulletList";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { bookStrategyCall } from "@/lib/strategyCall";
+import stage1Img from "/assets/generated/process-stage1-diagnose.dim_600x400.jpg";
+import stage2Img from "/assets/generated/process-stage2-architect.dim_600x400.jpg";
+import stage3Img from "/assets/generated/process-stage3-implement.dim_600x400.jpg";
+import stage4Img from "/assets/generated/process-stage4-optimize.dim_600x400.jpg";
 
 export function ProcessPage() {
   return (
@@ -63,217 +67,256 @@ export function ProcessPage() {
 
           <div className="space-y-8">
             {/* Stage 1 */}
-            <Card className="p-8 lg:p-10 border-l-4 border-l-accent-yellow">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-accent-yellow">
-                    1
-                  </span>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    Stage 1 — Diagnose
-                  </h3>
-                  <p className="text-lg text-accent-yellow font-semibold mb-4">
-                    Founder Control Blueprint™
-                  </p>
-                </div>
-              </div>
-
-              <div className="ml-16">
-                <h4 className="text-lg font-semibold text-foreground mb-3">
-                  What Happens:
-                </h4>
-                <StandardBulletList
-                  items={[
-                    "Deep founder interview",
-                    "Department-level workflow mapping",
-                    "Data architecture audit",
-                    "Risk & dependency analysis",
-                    "Profit leakage identification",
-                  ]}
-                  className="mb-6"
-                />
-
-                <div className="grid md:grid-cols-2 gap-6 mb-4">
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground mb-1">
-                      Duration:
-                    </p>
-                    <p className="text-lg text-foreground">2–4 weeks</p>
+            <Card className="overflow-hidden border-l-4 border-l-accent-yellow">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-8 lg:p-10">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-accent-yellow">
+                        1
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-foreground mb-2">
+                        Stage 1 — Diagnose
+                      </h3>
+                      <p className="text-lg text-accent-yellow font-semibold mb-4">
+                        Founder Control Blueprint™
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground mb-1">
-                      Outcome:
-                    </p>
-                    <p className="text-lg text-foreground">
-                      A structured transformation roadmap with clear priorities
-                      and ROI mapping.
+                  <div className="ml-16">
+                    <h4 className="text-lg font-semibold text-foreground mb-3">
+                      What Happens:
+                    </h4>
+                    <StandardBulletList
+                      items={[
+                        "Deep founder interview",
+                        "Department-level workflow mapping",
+                        "Data architecture audit",
+                        "Risk & dependency analysis",
+                        "Profit leakage identification",
+                      ]}
+                      className="mb-6"
+                    />
+                    <div className="grid md:grid-cols-2 gap-6 mb-4">
+                      <div>
+                        <p className="text-sm font-semibold text-muted-foreground mb-1">
+                          Duration:
+                        </p>
+                        <p className="text-lg text-foreground">2–4 weeks</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-muted-foreground mb-1">
+                          Outcome:
+                        </p>
+                        <p className="text-lg text-foreground">
+                          A structured transformation roadmap with clear
+                          priorities and ROI mapping.
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-lg font-semibold text-accent-yellow italic">
+                      No implementation starts without clarity.
                     </p>
                   </div>
                 </div>
-
-                <p className="text-lg font-semibold text-accent-yellow italic">
-                  No implementation starts without clarity.
-                </p>
+                <div className="relative min-h-[280px] lg:min-h-0">
+                  <img
+                    src={stage1Img}
+                    alt="Diagnose stage"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-card/60 to-transparent lg:from-transparent lg:to-transparent" />
+                </div>
               </div>
             </Card>
 
             {/* Stage 2 */}
-            <Card className="p-8 lg:p-10 border-l-4 border-l-accent-yellow">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-accent-yellow">
-                    2
-                  </span>
+            <Card className="overflow-hidden border-l-4 border-l-accent-yellow">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="relative min-h-[280px] lg:min-h-0 order-last lg:order-first">
+                  <img
+                    src={stage2Img}
+                    alt="Architect stage"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-card/60 to-transparent lg:from-transparent lg:to-transparent" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    Stage 2 — Architect
-                  </h3>
-                  <p className="text-lg text-muted-foreground font-semibold mb-4">
-                    We design your Business Operating System.
-                  </p>
-                </div>
-              </div>
-
-              <div className="ml-16">
-                <h4 className="text-lg font-semibold text-foreground mb-3">
-                  Includes:
-                </h4>
-                <StandardBulletList
-                  items={[
-                    "Centralized data architecture",
-                    "CRM & workflow structure",
-                    "Access hierarchies",
-                    "Dashboard blueprint",
-                    "Automation roadmap",
-                  ]}
-                  className="mb-6"
-                />
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground mb-1">
-                      Duration:
-                    </p>
-                    <p className="text-lg text-foreground">3–6 weeks</p>
+                <div className="p-8 lg:p-10">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-accent-yellow">
+                        2
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-foreground mb-2">
+                        Stage 2 — Architect
+                      </h3>
+                      <p className="text-lg text-muted-foreground font-semibold mb-4">
+                        We design your Business Operating System.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground mb-1">
-                      Outcome:
-                    </p>
-                    <p className="text-lg text-foreground">
-                      A system design document that defines how your business
-                      will function post-transformation.
-                    </p>
+                  <div className="ml-16">
+                    <h4 className="text-lg font-semibold text-foreground mb-3">
+                      Includes:
+                    </h4>
+                    <StandardBulletList
+                      items={[
+                        "Centralized data architecture",
+                        "CRM & workflow structure",
+                        "Access hierarchies",
+                        "Dashboard blueprint",
+                        "Automation roadmap",
+                      ]}
+                      className="mb-6"
+                    />
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <p className="text-sm font-semibold text-muted-foreground mb-1">
+                          Duration:
+                        </p>
+                        <p className="text-lg text-foreground">3–6 weeks</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-muted-foreground mb-1">
+                          Outcome:
+                        </p>
+                        <p className="text-lg text-foreground">
+                          A system design document that defines how your
+                          business will function post-transformation.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </Card>
 
             {/* Stage 3 */}
-            <Card className="p-8 lg:p-10 border-l-4 border-l-accent-yellow">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-accent-yellow">
-                    3
-                  </span>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    Stage 3 — Implement
-                  </h3>
-                  <p className="text-lg text-muted-foreground font-semibold mb-4">
-                    Controlled deployment of systems.
-                  </p>
-                </div>
-              </div>
-
-              <div className="ml-16">
-                <h4 className="text-lg font-semibold text-foreground mb-3">
-                  Includes:
-                </h4>
-                <StandardBulletList
-                  items={[
-                    "Workflow automation",
-                    "CRM deployment",
-                    "Dashboard creation",
-                    "Data migration",
-                    "Integration setup",
-                    "AI intelligence layer",
-                  ]}
-                  className="mb-6"
-                />
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground mb-1">
-                      Duration:
-                    </p>
-                    <p className="text-lg text-foreground">8–12 weeks</p>
+            <Card className="overflow-hidden border-l-4 border-l-accent-yellow">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-8 lg:p-10">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-accent-yellow">
+                        3
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-foreground mb-2">
+                        Stage 3 — Implement
+                      </h3>
+                      <p className="text-lg text-muted-foreground font-semibold mb-4">
+                        Controlled deployment of systems.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground mb-1">
-                      Outcome:
-                    </p>
-                    <p className="text-lg text-foreground">
-                      A live, operational Business OS with training and adoption
-                      support.
-                    </p>
+                  <div className="ml-16">
+                    <h4 className="text-lg font-semibold text-foreground mb-3">
+                      Includes:
+                    </h4>
+                    <StandardBulletList
+                      items={[
+                        "Workflow automation",
+                        "CRM deployment",
+                        "Dashboard creation",
+                        "Data migration",
+                        "Integration setup",
+                        "AI intelligence layer",
+                      ]}
+                      className="mb-6"
+                    />
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <p className="text-sm font-semibold text-muted-foreground mb-1">
+                          Duration:
+                        </p>
+                        <p className="text-lg text-foreground">8–12 weeks</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-muted-foreground mb-1">
+                          Outcome:
+                        </p>
+                        <p className="text-lg text-foreground">
+                          A live, operational Business OS with training and
+                          adoption support.
+                        </p>
+                      </div>
+                    </div>
                   </div>
+                </div>
+                <div className="relative min-h-[280px] lg:min-h-0">
+                  <img
+                    src={stage3Img}
+                    alt="Implement stage"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-card/60 to-transparent lg:from-transparent lg:to-transparent" />
                 </div>
               </div>
             </Card>
 
             {/* Stage 4 */}
-            <Card className="p-8 lg:p-10 border-l-4 border-l-accent-yellow">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-accent-yellow">
-                    4
-                  </span>
+            <Card className="overflow-hidden border-l-4 border-l-accent-yellow">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="relative min-h-[280px] lg:min-h-0 order-last lg:order-first">
+                  <img
+                    src={stage4Img}
+                    alt="Optimize stage"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-l from-card/60 to-transparent lg:from-transparent lg:to-transparent" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    Stage 4 — Optimize
-                  </h3>
-                  <p className="text-lg text-muted-foreground font-semibold mb-4">
-                    Continuous governance and growth.
-                  </p>
-                </div>
-              </div>
-
-              <div className="ml-16">
-                <h4 className="text-lg font-semibold text-foreground mb-3">
-                  Includes:
-                </h4>
-                <StandardBulletList
-                  items={[
-                    "Monthly performance reviews",
-                    "AI optimization",
-                    "System upgrades",
-                    "Governance alignment",
-                    "Strategic advisory",
-                  ]}
-                  className="mb-6"
-                />
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground mb-1">
-                      Duration:
-                    </p>
-                    <p className="text-lg text-foreground">Ongoing</p>
+                <div className="p-8 lg:p-10">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent-yellow/10 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-accent-yellow">
+                        4
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-foreground mb-2">
+                        Stage 4 — Optimize
+                      </h3>
+                      <p className="text-lg text-muted-foreground font-semibold mb-4">
+                        Continuous governance and growth.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-muted-foreground mb-1">
-                      Outcome:
-                    </p>
-                    <p className="text-lg text-foreground">
-                      Long-term institutional strength and continuous
-                      improvement.
-                    </p>
+                  <div className="ml-16">
+                    <h4 className="text-lg font-semibold text-foreground mb-3">
+                      Includes:
+                    </h4>
+                    <StandardBulletList
+                      items={[
+                        "Monthly performance reviews",
+                        "AI optimization",
+                        "System upgrades",
+                        "Governance alignment",
+                        "Strategic advisory",
+                      ]}
+                      className="mb-6"
+                    />
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <p className="text-sm font-semibold text-muted-foreground mb-1">
+                          Duration:
+                        </p>
+                        <p className="text-lg text-foreground">Ongoing</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-muted-foreground mb-1">
+                          Outcome:
+                        </p>
+                        <p className="text-lg text-foreground">
+                          Long-term institutional strength and continuous
+                          improvement.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

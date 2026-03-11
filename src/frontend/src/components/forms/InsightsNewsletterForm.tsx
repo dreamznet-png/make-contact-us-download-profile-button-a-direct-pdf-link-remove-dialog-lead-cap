@@ -8,8 +8,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { submitFormByEmail } from "@/lib/mailtoSubmit";
-import { CheckCircle2 } from "lucide-react";
+import { sendFormEmail } from "@/lib/mailtoSubmit";
+import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 
 const revenueRanges = ["₹5–10 Cr", "₹10–25 Cr", "₹25–50 Cr", "50+ Cr"];
@@ -23,6 +23,8 @@ export function InsightsNewsletterForm() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -39,45 +41,43 @@ export function InsightsNewsletterForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
-    const body = `Insights Newsletter Subscription
-
-Name: ${formData.firstName}
-Company: ${formData.companyName}
-Revenue Range: ${formData.revenueRange}
-Email: ${formData.email}
-
-Please add to strategic insights mailing list.`;
-    submitFormByEmail(
+    setIsSubmitting(true);
+    setSubmitError("");
+    const success = await sendFormEmail(
       `Insights Newsletter Subscription – ${formData.companyName}`,
-      body,
+      {
+        name: formData.firstName,
+        email: formData.email,
+        company: formData.companyName,
+        revenue_range: formData.revenueRange,
+      },
     );
-    setSubmitted(true);
+    setIsSubmitting(false);
+    if (success) {
+      setSubmitted(true);
+    } else {
+      setSubmitError(
+        "Something went wrong. Please email us directly at contact@weareinovics.com",
+      );
+    }
   };
 
   if (submitted) {
     return (
-      <div className="bg-card border border-border rounded-xl p-8 text-center">
+      <div
+        className="bg-card border border-border rounded-xl p-8 text-center"
+        data-ocid="newsletter_form.success_state"
+      >
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-yellow/10 mb-6">
           <CheckCircle2 className="h-8 w-8 text-accent-yellow" />
         </div>
-        <h3 className="text-2xl font-bold text-foreground mb-4">
-          Opening Your Email Client…
-        </h3>
-        <p className="text-lg text-muted-foreground mb-4">
-          Your details have been prepared. Please send the email that just
-          opened.
-        </p>
-        <p className="text-sm text-muted-foreground">
-          If nothing opened, email us at{" "}
-          <a
-            href="mailto:rakesh@weareinovics.com"
-            className="text-accent-yellow underline"
-          >
-            rakesh@weareinovics.com
-          </a>
+        <h3 className="text-2xl font-bold text-foreground mb-4">Thank You!</h3>
+        <p className="text-lg text-white mb-4">
+          Your enquiry has been received. We'll get back to you within 24–48
+          hours.
         </p>
         <Button
           onClick={() => setSubmitted(false)}
@@ -176,12 +176,27 @@ Please add to strategic insights mailing list.`;
           <p className="text-sm text-destructive mt-1">{errors.revenueRange}</p>
         )}
       </div>
+      {submitError && (
+        <p
+          className="text-sm text-destructive mb-4"
+          data-ocid="newsletter_form.error_state"
+        >
+          {submitError}
+        </p>
+      )}
       <Button
         type="submit"
+        disabled={isSubmitting}
         className="w-full bg-accent-yellow text-navy hover:bg-accent-yellow/90 font-semibold"
         data-ocid="newsletter_form.submit_button"
       >
-        Subscribe to Insights
+        {isSubmitting ? (
+          <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
+          </>
+        ) : (
+          "Subscribe to Insights"
+        )}
       </Button>
     </form>
   );

@@ -1,3 +1,5 @@
+const heroBg =
+  "/assets/generated/inovics-data-grid-bg-logo-palette.dim_1920x1080.png";
 import { HeroSlider } from "./HeroSlider";
 
 export function HeroSection() {
@@ -11,8 +13,7 @@ export function HeroSection() {
         <div
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage:
-              "url(/assets/generated/inovics-data-grid-bg-logo-palette.dim_1920x1080.png)",
+            backgroundImage: `url(${heroBg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

@@ -1,7 +1,28 @@
-const CONTACT_EMAIL = "rakesh@weareinovics.com";
+const CONTACT_EMAIL = "contact@weareinovics.com";
+const WEB3FORMS_ACCESS_KEY = "df498dde-23c4-4163-8da6-1f764a11e96f";
 
-export function submitFormByEmail(subject: string, body: string): void {
-  const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  // Use window.open to avoid navigating away from the current page
-  window.open(mailto, "_self");
+export async function sendFormEmail(
+  subject: string,
+  fields: Record<string, string>,
+): Promise<boolean> {
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject,
+        from_name: "INOVICS Website",
+        to_email: CONTACT_EMAIL,
+        ...fields,
+      }),
+    });
+    const result = await response.json();
+    return result.success === true;
+  } catch {
+    return false;
+  }
 }

@@ -1,4 +1,11 @@
 import { Button } from "@/components/ui/button";
+import imgClarify from "/assets/generated/inovics-framework-clarify-colourful.dim_1200x750.png";
+import imgLead from "/assets/generated/inovics-framework-lead-colourful.dim_1200x750.png";
+import imgNormalize from "/assets/generated/inovics-framework-normalize-colourful.dim_1200x750.png";
+import imgOptimize from "/assets/generated/inovics-framework-optimize-colourful.dim_1200x750.png";
+import imgOrganize from "/assets/generated/inovics-framework-organize-colourful.dim_1200x750.png";
+import imgReport from "/assets/generated/inovics-framework-report-colourful.dim_1200x750.png";
+import imgTransform from "/assets/generated/inovics-framework-transform-colourful.dim_1200x750.png";
 
 const frameworkSteps = [
   {
@@ -6,56 +13,49 @@ const frameworkSteps = [
     title: "Clarify",
     description:
       "Map current workflows, identify bottlenecks, and define the founder's true role versus operational dependencies.",
-    image:
-      "/assets/generated/inovics-framework-clarify-colourful.dim_1200x750.png",
+    image: imgClarify,
   },
   {
     letter: "O",
     title: "Organize",
     description:
       "Structure data flows, standardize processes, and establish clear ownership across departments.",
-    image:
-      "/assets/generated/inovics-framework-organize-colourful.dim_1200x750.png",
+    image: imgOrganize,
   },
   {
     letter: "N",
     title: "Normalize",
     description:
       "Create consistent protocols, documentation standards, and decision-making frameworks that work without the founder.",
-    image:
-      "/assets/generated/inovics-framework-normalize-colourful.dim_1200x750.png",
+    image: imgNormalize,
   },
   {
     letter: "T",
     title: "Transform",
     description:
       "Implement AI-powered automation, intelligent workflows, and digital infrastructure to replace manual processes.",
-    image:
-      "/assets/generated/inovics-framework-transform-colourful.dim_1200x750.png",
+    image: imgTransform,
   },
   {
     letter: "R",
     title: "Report",
     description:
       "Deploy real-time dashboards, automated reporting systems, and performance metrics visible to leadership.",
-    image:
-      "/assets/generated/inovics-framework-report-colourful.dim_1200x750.png",
+    image: imgReport,
   },
   {
     letter: "O2",
     title: "Optimize",
     description:
       "Continuously refine systems using data insights, eliminate inefficiencies, and scale operations intelligently.",
-    image:
-      "/assets/generated/inovics-framework-optimize-colourful.dim_1200x750.png",
+    image: imgOptimize,
   },
   {
     letter: "L",
     title: "Lead",
     description:
       "Transition from operational firefighting to strategic leadership with systems that run independently.",
-    image:
-      "/assets/generated/inovics-framework-lead-colourful.dim_1200x750.png",
+    image: imgLead,
   },
 ];
 

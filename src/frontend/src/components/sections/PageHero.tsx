@@ -1,3 +1,6 @@
+const defaultBg =
+  "/assets/generated/inovics-data-grid-bg-logo-palette.dim_1920x1080.png";
+
 interface PageHeroProps {
   title: string;
   subtitle?: string;
@@ -12,7 +15,7 @@ export function PageHero({
   subtitle,
   description,
   children,
-  backgroundImage = "/assets/generated/inovics-data-grid-bg-logo-palette.dim_1920x1080.png",
+  backgroundImage = defaultBg,
   backgroundOpacity = 10,
 }: PageHeroProps) {
   return (

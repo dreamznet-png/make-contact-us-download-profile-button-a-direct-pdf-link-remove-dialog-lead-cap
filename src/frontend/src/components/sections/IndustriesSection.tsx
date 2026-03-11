@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Briefcase, Factory, Package, Users2 } from "lucide-react";
+const industryMosaic =
+  "/assets/generated/inovics-abstract-industry-mosaic.dim_1600x900.png";
 
 const industries = [
   {
@@ -36,7 +38,7 @@ export function IndustriesSection() {
     >
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <img
-          src="/assets/generated/inovics-abstract-industry-mosaic.dim_1600x900.png"
+          src={industryMosaic}
           alt=""
           className="decorative-visual w-full h-full object-cover"
           loading="lazy"

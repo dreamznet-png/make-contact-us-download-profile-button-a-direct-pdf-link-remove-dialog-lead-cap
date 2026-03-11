@@ -9,8 +9,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { submitFormByEmail } from "@/lib/mailtoSubmit";
-import { CheckCircle2 } from "lucide-react";
+import { sendFormEmail } from "@/lib/mailtoSubmit";
+import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
 
 const industries = [
@@ -41,6 +41,8 @@ export function FounderControlBlueprintInquiryForm() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -65,49 +67,47 @@ export function FounderControlBlueprintInquiryForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
-    const body = `Founder Control Blueprint™ Inquiry
-
-Name: ${formData.firstName} ${formData.lastName}
-Company: ${formData.companyName}
-Industry: ${formData.industry}
-Annual Revenue: ${formData.revenueRange}
-Number of Employees: ${formData.numberOfEmployees}
-Work Email: ${formData.email}
-Mobile: ${formData.mobile}
-
-Biggest Operational Bottleneck:
-${formData.operationalBottleneck}`;
-    submitFormByEmail(
+    setIsSubmitting(true);
+    setSubmitError("");
+    const success = await sendFormEmail(
       `Founder Control Blueprint™ Inquiry – ${formData.companyName}`,
-      body,
+      {
+        name: `${formData.firstName} ${formData.lastName}`,
+        company: formData.companyName,
+        industry: formData.industry,
+        revenue_range: formData.revenueRange,
+        number_of_employees: formData.numberOfEmployees,
+        email: formData.email,
+        mobile: formData.mobile,
+        operational_bottleneck: formData.operationalBottleneck,
+      },
     );
-    setSubmitted(true);
+    setIsSubmitting(false);
+    if (success) {
+      setSubmitted(true);
+    } else {
+      setSubmitError(
+        "Something went wrong. Please email us directly at contact@weareinovics.com",
+      );
+    }
   };
 
   if (submitted) {
     return (
-      <div className="bg-card border border-border rounded-xl p-8 lg:p-10 text-center">
+      <div
+        className="bg-card border border-border rounded-xl p-8 lg:p-10 text-center"
+        data-ocid="blueprint_form.success_state"
+      >
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent-yellow/10 mb-6">
           <CheckCircle2 className="h-8 w-8 text-accent-yellow" />
         </div>
-        <h3 className="text-2xl font-bold text-foreground mb-4">
-          Opening Your Email Client…
-        </h3>
-        <p className="text-lg text-muted-foreground mb-4">
-          Your details have been prepared. Please send the email that just
-          opened to complete your inquiry.
-        </p>
-        <p className="text-sm text-muted-foreground">
-          If nothing opened, email us at{" "}
-          <a
-            href="mailto:rakesh@weareinovics.com"
-            className="text-accent-yellow underline"
-          >
-            rakesh@weareinovics.com
-          </a>
+        <h3 className="text-2xl font-bold text-foreground mb-4">Thank You!</h3>
+        <p className="text-lg text-white mb-4">
+          Your enquiry has been received. We'll get back to you within 24–48
+          hours.
         </p>
         <Button
           onClick={() => setSubmitted(false)}
@@ -323,12 +323,27 @@ ${formData.operationalBottleneck}`;
           )}
         </div>
       </div>
+      {submitError && (
+        <p
+          className="text-sm text-destructive mb-4"
+          data-ocid="blueprint_form.error_state"
+        >
+          {submitError}
+        </p>
+      )}
       <Button
         type="submit"
+        disabled={isSubmitting}
         className="w-full bg-accent-yellow text-navy hover:bg-accent-yellow/90 font-semibold text-lg py-6"
         data-ocid="blueprint_form.submit_button"
       >
-        Submit Inquiry
+        {isSubmitting ? (
+          <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
+          </>
+        ) : (
+          "Submit Inquiry"
+        )}
       </Button>
       <p className="text-sm text-muted-foreground text-center mt-4">
         Our team reviews all submissions personally.

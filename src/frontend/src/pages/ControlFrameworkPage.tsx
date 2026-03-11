@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { bookStrategyCall } from "@/lib/strategyCall";
 import { CheckCircle2 } from "lucide-react";
+const heroBg =
+  "/assets/generated/inovics-data-grid-bg-logo-palette.dim_1920x1080.png";
 
 const afterItems = [
   "Systems make decisions",
@@ -36,7 +38,10 @@ export function ControlFrameworkPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy via-charcoal to-background opacity-95" />
-        <div className="absolute inset-0 bg-[url('/assets/generated/inovics-data-grid-bg-logo-palette.dim_1920x1080.png')] bg-cover bg-center opacity-10" />
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">

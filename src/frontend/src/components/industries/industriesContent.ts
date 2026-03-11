@@ -1,4 +1,34 @@
+const imgMfgGovernance =
+  "/assets/generated/industry-manufacturing-governance-approvals.dim_512x512.png";
 // Static content model for the Industries page
+const imgMfgInventory =
+  "/assets/generated/industry-manufacturing-inventory-supply.dim_512x512.png";
+const imgMfgDashboard =
+  "/assets/generated/industry-manufacturing-ops-dashboard.dim_512x512.png";
+const imgMfgWorkflow =
+  "/assets/generated/industry-manufacturing-workflow-automation.dim_512x512.png";
+const imgProGovernance =
+  "/assets/generated/industry-pro-services-governance-approvals.dim_512x512.png";
+const imgProInventory =
+  "/assets/generated/industry-pro-services-inventory-supply.dim_512x512.png";
+const imgProDashboard =
+  "/assets/generated/industry-pro-services-ops-dashboard.dim_512x512.png";
+const imgProWorkflow =
+  "/assets/generated/industry-pro-services-workflow-automation.dim_512x512.png";
+const imgTradingInventory =
+  "/assets/generated/industry-trading-inventory-supply.dim_512x512.png";
+const imgTradingDashboard =
+  "/assets/generated/industry-trading-ops-dashboard.dim_512x512.png";
+const imgTradingWorkflow =
+  "/assets/generated/industry-trading-workflow-automation.dim_512x512.png";
+const imgWholesaleGovernance =
+  "/assets/generated/industry-wholesale-governance-approvals.dim_512x512.png";
+const imgWholesaleInventory =
+  "/assets/generated/industry-wholesale-inventory-supply.dim_512x512.png";
+const imgWholesaleDashboard =
+  "/assets/generated/industry-wholesale-ops-dashboard.dim_512x512.png";
+const imgWholesaleWorkflow =
+  "/assets/generated/industry-wholesale-workflow-automation.dim_512x512.png";
 
 export interface MajorService {
   label: string;
@@ -51,27 +81,23 @@ export const industriesContent: IndustryContent[] = [
     majorServices: [
       {
         label: "Centralized inventory & order management",
-        imagePath:
-          "/assets/generated/industry-manufacturing-inventory-supply.dim_512x512.png",
+        imagePath: imgMfgInventory,
         altText:
           "Manufacturing centralized inventory and order management system",
       },
       {
         label: "Automated reorder triggers",
-        imagePath:
-          "/assets/generated/industry-manufacturing-workflow-automation.dim_512x512.png",
+        imagePath: imgMfgWorkflow,
         altText: "Manufacturing automated reorder trigger system",
       },
       {
         label: "Production dashboards with real-time tracking",
-        imagePath:
-          "/assets/generated/industry-manufacturing-ops-dashboard.dim_512x512.png",
+        imagePath: imgMfgDashboard,
         altText: "Manufacturing production dashboard with real-time tracking",
       },
       {
         label: "Approval workflows with delegation rules",
-        imagePath:
-          "/assets/generated/industry-manufacturing-governance-approvals.dim_512x512.png",
+        imagePath: imgMfgGovernance,
         altText: "Manufacturing approval workflows with delegation rules",
       },
     ],
@@ -269,39 +295,35 @@ export const industriesContent: IndustryContent[] = [
     majorServices: [
       {
         label: "Unified CRM with customer lifecycle tracking",
-        imagePath:
-          "/assets/generated/industry-wholesale-inventory-supply.dim_512x512.png",
+        imagePath: imgWholesaleInventory,
         altText:
           "Wholesale and retail unified CRM with customer lifecycle tracking",
       },
       {
         label: "Sales pipeline automation",
-        imagePath:
-          "/assets/generated/industry-wholesale-workflow-automation.dim_512x512.png",
+        imagePath: imgWholesaleWorkflow,
         altText: "Wholesale and retail sales pipeline automation system",
       },
       {
         label: "Centralized pricing & discount management",
-        imagePath:
-          "/assets/generated/industry-wholesale-ops-dashboard.dim_512x512.png",
+        imagePath: imgWholesaleDashboard,
         altText:
           "Wholesale and retail centralized pricing and discount management",
       },
       {
         label: "Performance dashboards for sales teams",
-        imagePath:
-          "/assets/generated/industry-wholesale-governance-approvals.dim_512x512.png",
+        imagePath: imgWholesaleGovernance,
         altText: "Wholesale and retail performance dashboards for sales teams",
       },
     ],
     caseStudies: [
       {
         title: "Wholesale & Retail Case Study 1",
-        pdfUrl: undefined, // Placeholder - add PDF path when available
+        pdfUrl: undefined,
       },
       {
         title: "Wholesale & Retail Case Study 2",
-        pdfUrl: undefined, // Placeholder - add PDF path when available
+        pdfUrl: undefined,
       },
     ],
   },
@@ -324,39 +346,35 @@ export const industriesContent: IndustryContent[] = [
     majorServices: [
       {
         label: "Project management system with milestone tracking",
-        imagePath:
-          "/assets/generated/industry-pro-services-ops-dashboard.dim_512x512.png",
+        imagePath: imgProDashboard,
         altText:
           "Professional services project management system with milestone tracking",
       },
       {
         label: "Automated client onboarding workflows",
-        imagePath:
-          "/assets/generated/industry-pro-services-workflow-automation.dim_512x512.png",
+        imagePath: imgProWorkflow,
         altText: "Professional services automated client onboarding workflows",
       },
       {
         label: "Integrated billing & invoicing automation",
-        imagePath:
-          "/assets/generated/industry-pro-services-inventory-supply.dim_512x512.png",
+        imagePath: imgProInventory,
         altText:
           "Professional services integrated billing and invoicing automation",
       },
       {
         label: "Client communication portal",
-        imagePath:
-          "/assets/generated/industry-pro-services-governance-approvals.dim_512x512.png",
+        imagePath: imgProGovernance,
         altText: "Professional services client communication portal",
       },
     ],
     caseStudies: [
       {
         title: "Professional Services Case Study 1",
-        pdfUrl: undefined, // Placeholder - add PDF path when available
+        pdfUrl: undefined,
       },
       {
         title: "Professional Services Case Study 2",
-        pdfUrl: undefined, // Placeholder - add PDF path when available
+        pdfUrl: undefined,
       },
     ],
   },
@@ -379,27 +397,23 @@ export const industriesContent: IndustryContent[] = [
     majorServices: [
       {
         label: "Centralized order management system",
-        imagePath:
-          "/assets/generated/industry-trading-ops-dashboard.dim_512x512.png",
+        imagePath: imgTradingDashboard,
         altText: "Trading and distribution centralized order management system",
       },
       {
         label: "Multi-warehouse inventory tracking",
-        imagePath:
-          "/assets/generated/industry-trading-inventory-supply.dim_512x512.png",
+        imagePath: imgTradingInventory,
         altText: "Trading and distribution multi-warehouse inventory tracking",
       },
       {
         label: "Automated invoicing & payment reconciliation",
-        imagePath:
-          "/assets/generated/industry-trading-workflow-automation.dim_512x512.png",
+        imagePath: imgTradingWorkflow,
         altText:
           "Trading and distribution automated invoicing and payment reconciliation",
       },
       {
         label: "Vendor portal with performance tracking",
-        imagePath:
-          "/assets/generated/industry-trading-workflow-automation.dim_512x512.png",
+        imagePath: imgTradingWorkflow,
         altText:
           "Trading and distribution vendor portal with performance tracking",
       },
@@ -407,11 +421,11 @@ export const industriesContent: IndustryContent[] = [
     caseStudies: [
       {
         title: "Trading & Distribution Case Study 1",
-        pdfUrl: undefined, // Placeholder - add PDF path when available
+        pdfUrl: undefined,
       },
       {
         title: "Trading & Distribution Case Study 2",
-        pdfUrl: undefined, // Placeholder - add PDF path when available
+        pdfUrl: undefined,
       },
     ],
   },
