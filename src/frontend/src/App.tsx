@@ -18,10 +18,16 @@ import { AdminPage } from "./pages/AdminPage";
 import { ContactPage } from "./pages/ContactPage";
 import { ControlFrameworkPage } from "./pages/ControlFrameworkPage";
 import { FaqPage } from "./pages/FaqPage";
+import { ImpactStoriesPage } from "./pages/ImpactStoriesPage";
 import { IndustriesPage } from "./pages/IndustriesPage";
 import { InsightsPage } from "./pages/InsightsPage";
 import { ProcessPage } from "./pages/ProcessPage";
 import { StrategySessionPage } from "./pages/StrategySessionPage";
+import { ImpactStoryLayout } from "./pages/impact-stories/ImpactStoryLayout";
+import {
+  IMPACT_STORIES,
+  isValidImpactStorySlug,
+} from "./pages/impact-stories/impactStoryData";
 import { BusinessGrowthInfrastructurePage } from "./pages/insights/BusinessGrowthInfrastructurePage";
 import { BusinessOperationalMaturityPage } from "./pages/insights/BusinessOperationalMaturityPage";
 import { CanYourBusinessRunWithoutYouPage } from "./pages/insights/CanYourBusinessRunWithoutYouPage";
@@ -64,10 +70,38 @@ function App() {
   const isAdminPage = currentPath === "/admin";
   const isFaqPage = currentPath === "/faq";
   const isInsightsHubPage = currentPath === "/insights";
+  const isImpactStoriesHubPage = currentPath === "/impact-stories";
 
   const insightSlugMatch = currentPath.match(/^\/insights\/(.+)$/);
   const insightSlug = insightSlugMatch ? insightSlugMatch[1] : null;
   const isInsightArticlePage = insightSlug && isValidInsightSlug(insightSlug);
+
+  const impactSlugMatch = currentPath.match(/^\/impact-stories\/(.+)$/);
+  const impactSlug = impactSlugMatch ? impactSlugMatch[1] : null;
+  const isImpactStoryPage = impactSlug && isValidImpactStorySlug(impactSlug);
+
+  if (isImpactStoryPage && impactSlug) {
+    const story = IMPACT_STORIES[impactSlug];
+    return (
+      <div className="min-h-screen bg-background">
+        <TopNav />
+        <ImpactStoryLayout story={story} />
+        <Footer />
+        <ScrollToTopControl />
+      </div>
+    );
+  }
+
+  if (isImpactStoriesHubPage) {
+    return (
+      <div className="min-h-screen bg-background">
+        <TopNav />
+        <ImpactStoriesPage />
+        <Footer />
+        <ScrollToTopControl />
+      </div>
+    );
+  }
 
   if (isInsightArticlePage && insightSlug) {
     let ArticleComponent: ComponentType | null = null;

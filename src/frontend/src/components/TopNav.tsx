@@ -13,8 +13,9 @@ const navLinks = [
   { label: "Framework", href: "#framework", isHash: true },
   { label: "Industries", href: "/industries", isHash: false },
   { label: "Process", href: "/process", isHash: false },
-  { label: "FAQ", href: "/faq", isHash: false },
+  { label: "FAQ's", href: "/faq", isHash: false },
   { label: "Insights", href: "/insights", isHash: false },
+  { label: "Impact Stories", href: "/impact-stories", isHash: false },
   { label: "Contact", href: "/contact", isHash: false },
   { label: "CONTROL™", href: "/control-framework", isHash: false },
 ];
@@ -28,7 +29,6 @@ export function TopNav() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Only update active section on homepage
       if (currentPath === "/") {
         const sections = navLinks
           .filter((link) => link.isHash)
@@ -65,11 +65,7 @@ export function TopNav() {
       const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
   };
 
@@ -78,9 +74,7 @@ export function TopNav() {
     link: (typeof navLinks)[0],
   ) => {
     e.preventDefault();
-
     if (link.isHash) {
-      // Hash link - check if we need to navigate home first
       if (currentPath !== "/") {
         window.history.pushState({}, "", "/");
         window.dispatchEvent(new PopStateEvent("popstate"));
@@ -89,7 +83,6 @@ export function TopNav() {
         scrollToSection(link.href);
       }
     } else {
-      // Route link
       window.history.pushState({}, "", link.href);
       window.dispatchEvent(new PopStateEvent("popstate"));
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -117,7 +110,6 @@ export function TopNav() {
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
-          {/* Enhanced Brand Mark with Tagline */}
           <a
             href="/"
             onClick={handleBrandClick}
@@ -131,12 +123,13 @@ export function TopNav() {
             </span>
           </a>
 
-          {/* Desktop Navigation - Enhanced with pill styling */}
-          <div className="hidden lg:flex items-center gap-2">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = link.isHash
                 ? activeSection === link.href.substring(1)
-                : currentPath === link.href;
+                : currentPath === link.href ||
+                  currentPath.startsWith(`${link.href}/`);
 
               return (
                 <a
@@ -144,7 +137,7 @@ export function TopNav() {
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link)}
                   className={`
-                    px-4 py-2.5 text-sm font-semibold rounded-full transition-all duration-200
+                    px-3 py-2 text-sm font-semibold rounded-full transition-all duration-200
                     ${
                       isActive
                         ? "bg-accent-yellow text-navy shadow-md"
@@ -158,7 +151,7 @@ export function TopNav() {
             })}
             <Button
               onClick={bookStrategyCall}
-              className="ml-2 bg-accent-yellow text-navy hover:bg-accent-yellow/90 font-semibold px-6 py-2.5 h-auto rounded-full shadow-md hover:shadow-lg transition-all"
+              className="ml-2 bg-accent-yellow text-navy hover:bg-accent-yellow/90 font-semibold px-5 py-2.5 h-auto rounded-full shadow-md hover:shadow-lg transition-all text-sm"
             >
               Book Strategy Call
             </Button>
@@ -183,7 +176,8 @@ export function TopNav() {
                 {navLinks.map((link) => {
                   const isActive = link.isHash
                     ? activeSection === link.href.substring(1)
-                    : currentPath === link.href;
+                    : currentPath === link.href ||
+                      currentPath.startsWith(`${link.href}/`);
 
                   return (
                     <SheetClose asChild key={link.href}>
