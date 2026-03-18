@@ -3,11 +3,18 @@ import { ContactOptionsGrid } from "@/components/contact/ContactOptionsGrid";
 import { FounderControlBlueprintInquiryForm } from "@/components/forms/FounderControlBlueprintInquiryForm";
 import { PageHero } from "@/components/sections/PageHero";
 import { Button } from "@/components/ui/button";
+import { useSEO } from "@/hooks/useSEO";
 import { bookStrategyCall } from "@/lib/strategyCall";
 import { Check } from "lucide-react";
 import { useEffect } from "react";
 
 export function ContactPage() {
+  useSEO({
+    title: "Contact INOVICS | Book a Strategy Call",
+    description:
+      "Book a strategy call, download our corporate profile, or send an enquiry. Mumbai-based AI transformation studio.",
+    url: "/contact",
+  });
   useEffect(() => {
     // Handle hash-based scroll after navigation
     if (window.location.hash) {

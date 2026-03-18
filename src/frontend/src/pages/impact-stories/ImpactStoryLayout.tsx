@@ -1,4 +1,6 @@
 import { PageHero } from "@/components/sections/PageHero";
+import { useSEO } from "@/hooks/useSEO";
+import { trackEvent } from "@/lib/analytics";
 import {
   ArrowLeft,
   CheckCircle2,
@@ -8,6 +10,7 @@ import {
   TrendingUp,
   Wrench,
 } from "lucide-react";
+import { useEffect } from "react";
 import type { ImpactStory } from "./impactStoryData";
 
 interface ImpactStoryLayoutProps {
@@ -48,6 +51,16 @@ const SECTION_CONFIG = [
 ];
 
 export function ImpactStoryLayout({ story }: ImpactStoryLayoutProps) {
+  useSEO({
+    title: `${story.title} | INOVICS Impact Stories`,
+    description: story.description,
+    url: `/impact-stories/${story.slug}`,
+  });
+
+  useEffect(() => {
+    trackEvent("page_view_impact_story", { story_title: story.slug });
+  }, [story.slug]);
+
   const handleBackClick = () => {
     window.history.pushState({}, "", "/impact-stories");
     window.dispatchEvent(new PopStateEvent("popstate"));
@@ -100,6 +113,21 @@ export function ImpactStoryLayout({ story }: ImpactStoryLayoutProps) {
               · {story.readTime}
             </span>
           </div>
+
+          {/* Service Image — shown above Business Challenge, used for social media */}
+          {story.serviceImage && (
+            <div
+              className="mb-10 rounded-2xl overflow-hidden"
+              style={{ border: "1px solid rgba(232,174,32,0.15)" }}
+            >
+              <img
+                src={story.serviceImage}
+                alt={story.title}
+                className="w-full object-cover"
+                style={{ maxHeight: "420px" }}
+              />
+            </div>
+          )}
 
           {/* Content sections */}
           <div className="space-y-10">
@@ -202,6 +230,9 @@ export function ImpactStoryLayout({ story }: ImpactStoryLayoutProps) {
             <button
               type="button"
               onClick={() => {
+                trackEvent("cta_click", {
+                  cta_name: "Book Strategy Call Impact Story",
+                });
                 window.history.pushState({}, "", "/contact");
                 window.dispatchEvent(new PopStateEvent("popstate"));
                 window.scrollTo({ top: 0, behavior: "auto" });

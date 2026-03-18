@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { ComponentType } from "react";
+import { AIAssessmentPopout } from "./components/AIAssessmentPopout";
 import { Footer } from "./components/Footer";
 import { ScrollToTopControl } from "./components/ScrollToTopControl";
 import { TopNav } from "./components/TopNav";
@@ -14,7 +15,9 @@ import { OutcomesSection } from "./components/sections/OutcomesSection";
 import { ProblemSection } from "./components/sections/ProblemSection";
 import { ProcessSection } from "./components/sections/ProcessSection";
 import { WhatInovicsDoesSection } from "./components/sections/WhatInovicsDoesSection";
+import { useSEO } from "./hooks/useSEO";
 import { AdminPage } from "./pages/AdminPage";
+import { AssessmentPage } from "./pages/AssessmentPage";
 import { ContactPage } from "./pages/ContactPage";
 import { ControlFrameworkPage } from "./pages/ControlFrameworkPage";
 import { FaqPage } from "./pages/FaqPage";
@@ -51,6 +54,17 @@ import {
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const isHomepage = currentPath === "/" || currentPath === "";
+  useSEO(
+    isHomepage
+      ? {
+          title: "INOVICS | AI-Powered Business Transformation for Indian SMEs",
+          description:
+            "We help ₹5–50 Cr family-run businesses build AI operating systems that replace chaos with control. Structure wins.",
+          url: "/",
+        }
+      : {},
+  );
 
   useEffect(() => {
     const handlePopState = () => {
@@ -71,6 +85,7 @@ function App() {
   const isFaqPage = currentPath === "/faq";
   const isInsightsHubPage = currentPath === "/insights";
   const isImpactStoriesHubPage = currentPath === "/impact-stories";
+  const isAssessmentPage = currentPath === "/assessment";
 
   const insightSlugMatch = currentPath.match(/^\/insights\/(.+)$/);
   const insightSlug = insightSlugMatch ? insightSlugMatch[1] : null;
@@ -80,6 +95,17 @@ function App() {
   const impactSlug = impactSlugMatch ? impactSlugMatch[1] : null;
   const isImpactStoryPage = impactSlug && isValidImpactStorySlug(impactSlug);
 
+  if (isAssessmentPage) {
+    return (
+      <div className="min-h-screen bg-background">
+        <TopNav />
+        <AssessmentPage />
+        <Footer />
+        <ScrollToTopControl />
+      </div>
+    );
+  }
+
   if (isImpactStoryPage && impactSlug) {
     const story = IMPACT_STORIES[impactSlug];
     return (
@@ -87,6 +113,7 @@ function App() {
         <TopNav />
         <ImpactStoryLayout story={story} />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
@@ -98,6 +125,7 @@ function App() {
         <TopNav />
         <ImpactStoriesPage />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
@@ -164,6 +192,7 @@ function App() {
           <TopNav />
           <ArticleComponent />
           <Footer />
+          <AIAssessmentPopout />
           <ScrollToTopControl />
         </div>
       );
@@ -176,6 +205,7 @@ function App() {
         <TopNav />
         <InsightsPage />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
@@ -187,6 +217,7 @@ function App() {
         <TopNav />
         <ControlFrameworkPage />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
@@ -198,6 +229,7 @@ function App() {
         <TopNav />
         <IndustriesPage />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
@@ -209,6 +241,7 @@ function App() {
         <TopNav />
         <ProcessPage />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
@@ -220,6 +253,7 @@ function App() {
         <TopNav />
         <ContactPage />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
@@ -231,6 +265,7 @@ function App() {
         <TopNav />
         <StrategySessionPage />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
@@ -242,6 +277,7 @@ function App() {
         <TopNav />
         <AdminPage />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
@@ -253,11 +289,13 @@ function App() {
         <TopNav />
         <FaqPage />
         <Footer />
+        <AIAssessmentPopout />
         <ScrollToTopControl />
       </div>
     );
   }
 
+  // Homepage
   return (
     <div className="min-h-screen bg-background">
       <TopNav />
@@ -275,6 +313,7 @@ function App() {
         <ContactSection />
       </main>
       <Footer />
+      <AIAssessmentPopout />
       <ScrollToTopControl />
     </div>
   );

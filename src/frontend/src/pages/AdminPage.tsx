@@ -18,6 +18,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useSEO } from "@/hooks/useSEO";
 import { useQueryClient } from "@tanstack/react-query";
 import {
   CheckCircle2,
@@ -46,6 +47,11 @@ import { useInternetIdentity } from "../hooks/useInternetIdentity";
 void AdminResetRecoveryCard;
 
 export function AdminPage() {
+  useSEO({
+    title: "Dashboard | INOVICS",
+    description: "Internal dashboard.",
+    url: "/admin",
+  });
   const { identity, login, loginStatus, clear } = useInternetIdentity();
   const { actor } = useActor();
   const queryClient = useQueryClient();

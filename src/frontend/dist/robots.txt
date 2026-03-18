@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://weareinovics-2uo.caffeine.xyz/sitemap.xml

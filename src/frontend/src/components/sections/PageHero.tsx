@@ -19,7 +19,7 @@ export function PageHero({
   backgroundOpacity = 10,
 }: PageHeroProps) {
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 lg:py-32 overflow-hidden min-h-[220px] sm:min-h-[260px]">
       <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-dark to-charcoal">
         <div
           className="absolute inset-0"
@@ -33,11 +33,11 @@ export function PageHero({
       </div>
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground">
+          <h1 className="text-2xl sm:text-4xl lg:text-7xl font-bold tracking-tight leading-tight text-foreground">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-xl sm:text-2xl text-muted-foreground font-medium">
+            <p className="text-lg sm:text-2xl text-muted-foreground font-medium">
               {subtitle}
             </p>
           )}

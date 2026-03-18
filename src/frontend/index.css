@@ -102,6 +102,11 @@
   section[id] {
     scroll-margin-top: 6rem;
   }
+
+  /* AI Assessment tab button - force black text despite global white override */
+  button[data-ocid="ai-assessment.open_modal_button"] {
+    color: #000000 !important;
+  }
 }
 
 @layer utilities {
@@ -159,5 +164,10 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+
+  /* AI Assessment tab button - force black text despite global white override */
+  button[data-ocid="ai-assessment.open_modal_button"] {
+    color: #000000 !important;
   }
 }

@@ -7,6 +7,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useSEO } from "@/hooks/useSEO";
+import { trackEvent } from "@/lib/analytics";
 
 interface FaqItem {
   question: string;
@@ -218,6 +220,12 @@ function processFaqAnswer(answer: string[]) {
 }
 
 export function FaqPage() {
+  useSEO({
+    title: "FAQ's | INOVICS",
+    description:
+      "Answers to common questions about AI transformation, the CONTROL™ Framework, and working with INOVICS.",
+    url: "/faq",
+  });
   return (
     <div className="min-h-screen">
       <PageHero
@@ -228,7 +236,20 @@ export function FaqPage() {
       <section className="py-20 lg:py-28 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-6">
+            <Accordion
+              type="single"
+              collapsible
+              className="space-y-6"
+              onValueChange={(value) => {
+                if (value) {
+                  const faq = faqs.find((f) => f.question === value);
+                  if (faq)
+                    trackEvent("faq_opened", {
+                      question: faq.question.slice(0, 100),
+                    });
+                }
+              }}
+            >
               {faqs.map((faq) => {
                 const processedAnswer = processFaqAnswer(faq.answer);
                 return (

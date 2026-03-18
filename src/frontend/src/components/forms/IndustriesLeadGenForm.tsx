@@ -9,6 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { trackEvent } from "@/lib/analytics";
 import { sendFormEmail } from "@/lib/mailtoSubmit";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
@@ -83,6 +84,7 @@ export function IndustriesLeadGenForm() {
     );
     setIsSubmitting(false);
     if (success) {
+      trackEvent("form_submit", { form_name: "Industries Lead Gen" });
       setSubmitted(true);
     } else {
       setSubmitError(

@@ -1,5 +1,7 @@
 import { InsightsNewsletterForm } from "@/components/forms/InsightsNewsletterForm";
 import { PageHero } from "@/components/sections/PageHero";
+import { useSEO } from "@/hooks/useSEO";
+import { trackEvent } from "@/lib/analytics";
 import { useEffect } from "react";
 import { INSIGHT_ARTICLES } from "./insights/insightArticles";
 import { ORDERED_INSIGHT_SLUGS } from "./insights/insightSlugs";
@@ -12,6 +14,12 @@ const CATEGORY_COLORS: Record<string, string> = {
 };
 
 export function InsightsPage() {
+  useSEO({
+    title: "Insights | INOVICS",
+    description:
+      "Strategic articles on AI transformation, operational excellence, and scaling systems for founder-led Indian businesses.",
+    url: "/insights",
+  });
   useEffect(() => {
     document.title = "Insights | INOVICS";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -24,6 +32,9 @@ export function InsightsPage() {
   }, []);
 
   const handleArticleClick = (slug: string) => {
+    const article = INSIGHT_ARTICLES[slug];
+    if (article)
+      trackEvent("insight_card_click", { article_title: article.title });
     window.history.pushState({}, "", `/insights/${slug}`);
     window.dispatchEvent(new PopStateEvent("popstate"));
     window.scrollTo({ top: 0, behavior: "auto" });

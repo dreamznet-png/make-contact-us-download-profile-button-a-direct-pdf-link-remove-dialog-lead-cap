@@ -1,6 +1,7 @@
 import { ControlLeadGenForm } from "@/components/forms/ControlLeadGenForm";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useSEO } from "@/hooks/useSEO";
 import { bookStrategyCall } from "@/lib/strategyCall";
 import { CheckCircle2 } from "lucide-react";
 const heroBg =
@@ -23,6 +24,12 @@ const forItems = [
 ];
 
 export function ControlFrameworkPage() {
+  useSEO({
+    title: "The CONTROL™ Framework | INOVICS",
+    description:
+      "A 6-step transformation methodology — Clarify, Organize, Normalize, Transform, Report, Optimize, Lead. Built for legacy Indian businesses.",
+    url: "/framework",
+  });
   const scrollToLeadGen = () => {
     const element = document.getElementById("lead-generation");
     if (element) {

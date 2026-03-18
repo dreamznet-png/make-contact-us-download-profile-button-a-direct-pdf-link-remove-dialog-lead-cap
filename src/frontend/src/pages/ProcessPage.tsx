@@ -3,6 +3,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { StandardBulletList } from "@/components/shared/StandardBulletList";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useSEO } from "@/hooks/useSEO";
 import { bookStrategyCall } from "@/lib/strategyCall";
 import stage1Img from "/assets/generated/process-stage1-diagnose.dim_600x400.jpg";
 import stage2Img from "/assets/generated/process-stage2-architect.dim_600x400.jpg";
@@ -10,6 +11,12 @@ import stage3Img from "/assets/generated/process-stage3-implement.dim_600x400.jp
 import stage4Img from "/assets/generated/process-stage4-optimize.dim_600x400.jpg";
 
 export function ProcessPage() {
+  useSEO({
+    title: "Our Process | INOVICS",
+    description:
+      "Four stages: Diagnose, Architect, Implement, Institutionalize. How INOVICS builds AI operating systems inside your business.",
+    url: "/process",
+  });
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}

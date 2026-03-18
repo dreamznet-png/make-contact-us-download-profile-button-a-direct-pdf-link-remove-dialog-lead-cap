@@ -8,6 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { trackEvent } from "@/lib/analytics";
 import { sendFormEmail } from "@/lib/mailtoSubmit";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";

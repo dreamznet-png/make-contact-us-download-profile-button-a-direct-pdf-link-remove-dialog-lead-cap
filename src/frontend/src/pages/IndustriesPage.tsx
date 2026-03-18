@@ -6,16 +6,25 @@ import type { CaseStudy } from "@/components/industries/industriesContent";
 import { PageHero } from "@/components/sections/PageHero";
 import { StandardBulletList } from "@/components/shared/StandardBulletList";
 import { Button } from "@/components/ui/button";
+import { useSEO } from "@/hooks/useSEO";
+import { trackEvent } from "@/lib/analytics";
 import { bookStrategyCall } from "@/lib/strategyCall";
 import { useState } from "react";
 
 export function IndustriesPage() {
+  useSEO({
+    title: "Industries We Serve | INOVICS",
+    description:
+      "AI transformation for Manufacturing, Trading & Distribution, Professional Services, and Ecommerce businesses in India.",
+    url: "/industries",
+  });
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudy | null>(
     null,
   );
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleCaseStudyClick = (caseStudy: CaseStudy) => {
+    trackEvent("case_study_opened", { case_study: caseStudy.title });
     if (caseStudy.details) {
       setSelectedCaseStudy(caseStudy);
       setModalOpen(true);

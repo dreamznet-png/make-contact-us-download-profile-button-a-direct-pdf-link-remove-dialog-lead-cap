@@ -9,6 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { trackEvent } from "@/lib/analytics";
 import { sendFormEmail } from "@/lib/mailtoSubmit";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { useState } from "react";
@@ -82,6 +83,7 @@ export function ProcessLeadGenForm() {
     );
     setIsSubmitting(false);
     if (success) {
+      trackEvent("form_submit", { form_name: "Process Page Inquiry" });
       setSubmitted(true);
     } else {
       setSubmitError(

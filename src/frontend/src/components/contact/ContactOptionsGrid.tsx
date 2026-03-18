@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { trackEvent } from "@/lib/analytics";
 import {
   COMPANY_PROFILE_URL,
   CONTACT_CONFIG,
@@ -16,6 +17,7 @@ import { Calendar, Download, Mail, MessageCircle } from "lucide-react";
 
 export function ContactOptionsGrid() {
   const handleWhatsAppClick = () => {
+    trackEvent("whatsapp_click");
     if (CONTACT_CONFIG.whatsappUrl) {
       window.open(CONTACT_CONFIG.whatsappUrl, "_blank");
     } else {
@@ -23,6 +25,11 @@ export function ContactOptionsGrid() {
         "WhatsApp Business link is not configured. Please contact us via email.",
       );
     }
+  };
+
+  const handleBookCallClick = () => {
+    trackEvent("cta_click", { cta_name: "Book Strategy Call Contact" });
+    bookStrategyCall();
   };
 
   return (
@@ -43,7 +50,7 @@ export function ContactOptionsGrid() {
             objectives with our transformation team.
           </CardDescription>
           <Button
-            onClick={bookStrategyCall}
+            onClick={handleBookCallClick}
             className="w-full bg-accent-yellow text-navy hover:bg-accent-yellow/90 font-semibold"
           >
             Book Call
@@ -75,6 +82,9 @@ export function ContactOptionsGrid() {
               href={COMPANY_PROFILE_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackEvent("cta_click", { cta_name: "Download Profile" })
+              }
             >
               Download Profile
             </a>
@@ -101,7 +111,14 @@ export function ContactOptionsGrid() {
             variant="outline"
             className="w-full border-accent-yellow text-accent-yellow hover:bg-accent-yellow/10 font-semibold"
           >
-            <a href={`mailto:${CONTACT_EMAIL}`}>Send Email</a>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              onClick={() =>
+                trackEvent("footer_link_click", { link: "email_direct" })
+              }
+            >
+              Send Email
+            </a>
           </Button>
         </CardContent>
       </Card>

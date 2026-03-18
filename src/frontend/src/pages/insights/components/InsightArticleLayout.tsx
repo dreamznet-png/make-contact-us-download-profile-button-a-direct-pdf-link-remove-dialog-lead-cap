@@ -1,6 +1,8 @@
 import { PageHero } from "@/components/sections/PageHero";
+import { useSEO } from "@/hooks/useSEO";
+import { trackEvent } from "@/lib/analytics";
 import { ArrowLeft } from "lucide-react";
-import { useInsightSeo } from "./useInsightSeo";
+import { useEffect, useRef } from "react";
 
 interface InsightArticleLayoutProps {
   title: string;
@@ -13,7 +15,36 @@ export function InsightArticleLayout({
   description,
   children,
 }: InsightArticleLayoutProps) {
-  useInsightSeo({ title, description });
+  const slug = window.location.pathname.replace("/insights/", "");
+
+  useSEO({
+    title: `${title} | INOVICS Insights`,
+    description,
+    url: window.location.pathname,
+  });
+
+  useEffect(() => {
+    trackEvent("page_view_insights", { article_title: slug });
+  }, [slug]);
+
+  const endRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = endRef.current;
+    if (!el) return;
+    let fired = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !fired) {
+          fired = true;
+          trackEvent("article_read_complete", { article_title: slug });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [slug]);
 
   const handleBackClick = () => {
     window.history.pushState({}, "", "/insights");
@@ -41,6 +72,7 @@ export function InsightArticleLayout({
               {description}
             </p>
             {children}
+            <div ref={endRef} />
           </div>
         </div>
       </div>

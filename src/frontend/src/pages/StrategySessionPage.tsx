@@ -2,9 +2,16 @@ import { StrategySessionApplicationForm } from "@/components/forms/StrategySessi
 import { PageHero } from "@/components/sections/PageHero";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useSEO } from "@/hooks/useSEO";
 import { Check, Clock, Shield, Target, TrendingUp, X } from "lucide-react";
 
 export function StrategySessionPage() {
+  useSEO({
+    title: "Book a Strategy Call | INOVICS",
+    description:
+      "Apply for a complimentary strategy session with INOVICS to explore AI transformation for your business.",
+    url: "/strategy-session",
+  });
   const scrollToForm = () => {
     const formElement = document.getElementById("application-form");
     if (formElement) {

@@ -5,6 +5,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { trackEvent } from "@/lib/analytics";
 import { bookStrategyCall } from "@/lib/strategyCall";
 import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -74,6 +75,7 @@ export function TopNav() {
     link: (typeof navLinks)[0],
   ) => {
     e.preventDefault();
+    trackEvent("nav_click", { link_label: link.label, link_href: link.href });
     if (link.isHash) {
       if (currentPath !== "/") {
         window.history.pushState({}, "", "/");
@@ -91,6 +93,7 @@ export function TopNav() {
 
   const handleBrandClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
+    trackEvent("nav_click", { link_label: "INOVICS Logo", link_href: "/" });
     if (currentPath !== "/") {
       window.history.pushState({}, "", "/");
       window.dispatchEvent(new PopStateEvent("popstate"));
@@ -98,6 +101,11 @@ export function TopNav() {
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
+  };
+
+  const handleBookStrategyCallClick = () => {
+    trackEvent("cta_click", { cta_name: "Book Strategy Call Nav" });
+    bookStrategyCall();
   };
 
   return (
@@ -150,7 +158,7 @@ export function TopNav() {
               );
             })}
             <Button
-              onClick={bookStrategyCall}
+              onClick={handleBookStrategyCallClick}
               className="ml-2 bg-accent-yellow text-navy hover:bg-accent-yellow/90 font-semibold px-5 py-2.5 h-auto rounded-full shadow-md hover:shadow-lg transition-all text-sm"
             >
               Book Strategy Call
@@ -164,6 +172,7 @@ export function TopNav() {
                 variant="ghost"
                 size="icon"
                 className="text-white hover:bg-white/10"
+                onClick={() => trackEvent("mobile_menu_open")}
               >
                 <Menu className="h-6 w-6" />
               </Button>
@@ -201,7 +210,7 @@ export function TopNav() {
                 })}
                 <SheetClose asChild>
                   <Button
-                    onClick={bookStrategyCall}
+                    onClick={handleBookStrategyCallClick}
                     className="mt-4 bg-accent-yellow text-navy hover:bg-accent-yellow/90 font-semibold py-6 text-base"
                   >
                     Book Strategy Call

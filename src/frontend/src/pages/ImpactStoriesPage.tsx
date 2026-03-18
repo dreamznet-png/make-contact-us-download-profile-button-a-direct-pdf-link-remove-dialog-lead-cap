@@ -1,4 +1,6 @@
 import { PageHero } from "@/components/sections/PageHero";
+import { useSEO } from "@/hooks/useSEO";
+import { trackEvent } from "@/lib/analytics";
 import { useEffect } from "react";
 import {
   IMPACT_STORIES,
@@ -15,6 +17,12 @@ const INDUSTRY_COLORS: Record<string, string> = {
 };
 
 export function ImpactStoriesPage() {
+  useSEO({
+    title: "Impact Stories | INOVICS",
+    description:
+      "Real-world AI implementation case studies across Indian SMEs — from invoice automation to sales forecasting.",
+    url: "/impact-stories",
+  });
   useEffect(() => {
     document.title = "Impact Stories | INOVICS";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -27,6 +35,8 @@ export function ImpactStoriesPage() {
   }, []);
 
   const handleStoryClick = (slug: string) => {
+    const story = IMPACT_STORIES[slug];
+    if (story) trackEvent("impact_story_click", { story_title: story.title });
     window.history.pushState({}, "", `/impact-stories/${slug}`);
     window.dispatchEvent(new PopStateEvent("popstate"));
     window.scrollTo({ top: 0, behavior: "auto" });
