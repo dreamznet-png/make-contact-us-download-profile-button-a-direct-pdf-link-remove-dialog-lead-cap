@@ -9,6 +9,7 @@ import { ControlFrameworkSection } from "./components/sections/ControlFrameworkS
 import { EmotionalBlockSection } from "./components/sections/EmotionalBlockSection";
 import { FinalCtaSection } from "./components/sections/FinalCtaSection";
 import { HeroSection } from "./components/sections/HeroSection";
+import { ImpactStoriesPreviewSection } from "./components/sections/ImpactStoriesPreviewSection";
 import { IndustriesSection } from "./components/sections/IndustriesSection";
 import { InsightsSection } from "./components/sections/InsightsSection";
 import { OutcomesSection } from "./components/sections/OutcomesSection";
@@ -308,6 +309,7 @@ function App() {
         <IndustriesSection />
         <ProcessSection />
         <EmotionalBlockSection />
+        <ImpactStoriesPreviewSection />
         <InsightsSection />
         <FinalCtaSection />
         <ContactSection />
