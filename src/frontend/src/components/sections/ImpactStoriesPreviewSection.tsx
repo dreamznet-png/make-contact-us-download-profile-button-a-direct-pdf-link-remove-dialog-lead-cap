@@ -1,11 +1,4 @@
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import {
   IMPACT_STORIES,
   IMPACT_STORY_SLUGS,
 } from "@/pages/impact-stories/impactStoryData";
@@ -91,92 +84,40 @@ export function ImpactStoriesPreviewSection() {
           </button>
         </div>
 
-        {/* Carousel */}
-        <Carousel opts={{ align: "start", loop: true }} className="w-full">
-          <CarouselContent className="-ml-4">
-            {IMPACT_STORY_SLUGS.map((slug) => {
-              const story = IMPACT_STORIES[slug];
-              const accent = getAccentColor(story.industry);
-              return (
-                <CarouselItem
-                  key={slug}
-                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+        {/* Story Tags Grid */}
+        <div className="flex flex-wrap gap-3">
+          {IMPACT_STORY_SLUGS.map((slug) => {
+            const story = IMPACT_STORIES[slug];
+            const accent = getAccentColor(story.industry);
+            return (
+              <button
+                key={slug}
+                type="button"
+                onClick={() => handleStoryClick(slug)}
+                className="group flex items-center gap-2.5 px-5 py-3 rounded-full text-sm font-semibold transition-all duration-200 hover:scale-105 hover:-translate-y-0.5"
+                style={{
+                  backgroundColor: `${accent}15`,
+                  border: `1px solid ${accent}40`,
+                  color: "#ffffff",
+                }}
+              >
+                <span
+                  className="w-2 h-2 rounded-full shrink-0 transition-transform duration-200 group-hover:scale-125"
+                  style={{ backgroundColor: accent }}
+                />
+                <span className="group-hover:text-yellow-300 transition-colors duration-200">
+                  {story.title}
+                </span>
+                <span
+                  className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs"
+                  style={{ color: accent }}
                 >
-                  <button
-                    type="button"
-                    onClick={() => handleStoryClick(slug)}
-                    className="group w-full text-left rounded-2xl p-6 h-full flex flex-col gap-4 transition-all duration-200 hover:-translate-y-1"
-                    style={{
-                      backgroundColor: "rgba(255,255,255,0.04)",
-                      border: `1px solid ${accent}30`,
-                    }}
-                  >
-                    {/* Industry badge */}
-                    <span
-                      className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full self-start"
-                      style={{
-                        backgroundColor: `${accent}18`,
-                        color: accent,
-                        border: `1px solid ${accent}40`,
-                      }}
-                    >
-                      <span
-                        className="w-1.5 h-1.5 rounded-full"
-                        style={{ backgroundColor: accent }}
-                      />
-                      {story.industry}
-                    </span>
-
-                    {/* Title */}
-                    <h3
-                      className="text-base font-bold leading-snug group-hover:text-yellow-300 transition-colors duration-200"
-                      style={{ color: "#ffffff" }}
-                    >
-                      {story.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p
-                      className="text-sm leading-relaxed flex-1"
-                      style={{ color: "rgba(255,255,255,0.55)" }}
-                    >
-                      {story.description}
-                    </p>
-
-                    {/* Read more */}
-                    <span
-                      className="text-xs font-semibold flex items-center gap-1 mt-auto group-hover:gap-2 transition-all duration-200"
-                      style={{ color: accent }}
-                    >
-                      Read Story
-                      <span className="transition-transform duration-200 group-hover:translate-x-1">
-                        →
-                      </span>
-                    </span>
-                  </button>
-                </CarouselItem>
-              );
-            })}
-          </CarouselContent>
-
-          {/* Nav buttons */}
-          <div className="flex justify-end gap-3 mt-8">
-            <CarouselPrevious
-              className="static translate-y-0 size-10 rounded-full border-0"
-              style={{
-                backgroundColor: "rgba(232,174,32,0.15)",
-                color: "#E8AE20",
-              }}
-            />
-            <CarouselNext
-              className="static translate-y-0 size-10 rounded-full border-0"
-              style={{
-                backgroundColor: "rgba(232,174,32,0.15)",
-                color: "#E8AE20",
-              }}
-            />
-          </div>
-        </Carousel>
+                  →
+                </span>
+              </button>
+            );
+          })}
+        </div>
 
         {/* Stats bar */}
         <div

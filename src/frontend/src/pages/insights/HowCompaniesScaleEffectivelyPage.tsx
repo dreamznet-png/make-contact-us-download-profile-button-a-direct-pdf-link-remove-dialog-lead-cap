@@ -1,3 +1,4 @@
+import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -5,6 +6,12 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function HowCompaniesScaleEffectivelyPage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.HOW_COMPANIES_SCALE_EFFECTIVELY];
+  useSEO({
+    title: "How Companies Scale Effectively | SME India | INOVICS",
+    description:
+      "The four pillars of scalable companies. How Indian SMEs build operating models that grow revenue without growing complexity.",
+    url: "/insights/how-companies-scale-effectively",
+  });
 
   return (
     <InsightArticleLayout

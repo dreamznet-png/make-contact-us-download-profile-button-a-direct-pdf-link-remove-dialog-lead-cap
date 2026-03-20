@@ -1,9 +1,16 @@
+import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
 
 export function FoundersPlaybookScalingPage() {
   const article = INSIGHT_ARTICLES[INSIGHT_SLUGS.FOUNDERS_PLAYBOOK_SCALING];
+  useSEO({
+    title: "Founder's Playbook: Scale Your Business | INOVICS",
+    description:
+      "A practical guide for Indian founders on scaling through systems, not hustle. Shift from founder-driven to system-driven operations.",
+    url: "/insights/founders-playbook-scaling",
+  });
 
   return (
     <InsightArticleLayout

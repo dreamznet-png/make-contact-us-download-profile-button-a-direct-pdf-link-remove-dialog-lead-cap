@@ -1,3 +1,4 @@
+import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -5,6 +6,12 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function CrmVsErpWhatGrowingSmesActuallyNeedPage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.CRM_VS_ERP_WHAT_GROWING_SMES_ACTUALLY_NEED];
+  useSEO({
+    title: "CRM vs ERP: What Indian SMEs Need | INOVICS",
+    description:
+      "Should your Indian SME invest in CRM or ERP? Understand the difference and what growing ₹5–50 Cr businesses actually need to scale.",
+    url: "/insights/crm-vs-erp-what-growing-smes-actually-need",
+  });
 
   return (
     <InsightArticleLayout

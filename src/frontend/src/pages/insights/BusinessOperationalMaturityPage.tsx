@@ -1,9 +1,16 @@
+import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
 
 export function BusinessOperationalMaturityPage() {
   const article = INSIGHT_ARTICLES[INSIGHT_SLUGS.BUSINESS_OPERATIONAL_MATURITY];
+  useSEO({
+    title: "Business Operational Maturity | Indian SME | INOVICS",
+    description:
+      "Understand your business's operational maturity level. How Indian SMEs progress from chaotic to intelligent operations for sustainable growth.",
+    url: "/insights/business-operational-maturity",
+  });
 
   return (
     <InsightArticleLayout

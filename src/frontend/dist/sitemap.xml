@@ -1,204 +1,286 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Static pages -->
+
+  <!-- ===== STATIC PAGES ===== -->
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://weareinovics-2uo.caffeine.xyz/framework</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://weareinovics-2uo.caffeine.xyz/control-framework</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/industries</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/process</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/faq</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/contact</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://weareinovics-2uo.caffeine.xyz/contact</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/strategy-session</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/assessment</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ===== INSIGHTS ARTICLES (16) ===== -->
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/insights/founders-playbook-scaling</loc>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- Insights articles -->
-  <url>
-    <loc>https://weareinovics-2uo.caffeine.xyz/insights/founders-playbook-scaling</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/how-companies-scale-effectively</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/how-to-scale-a-business-without-chaos</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/excel-is-not-a-business-system</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/why-growth-breaks-weak-infrastructure</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/from-founder-driven-to-system-driven</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/crm-vs-erp-what-growing-smes-actually-need</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/the-hidden-cost-of-manual-reporting</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/can-your-business-run-without-you</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/operational-excellence-for-smes</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/business-operational-maturity</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/how-to-scale-operations</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/systems-thinking-for-business</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/the-scaling-operations-framework</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/business-growth-infrastructure</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/insights/the-modern-business-operating-model</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
-  <!-- Impact stories -->
+
+  <!-- ===== IMPACT STORIES (20) ===== -->
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-invoice-processing-for-smes</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-lead-qualification-for-sales-teams</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-sales-forecasting-for-growing-companies</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-customer-support-automation</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-resume-screening-for-recruitment</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-knowledge-assistants-for-employees</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-scheduling-systems-for-service-businesses</loc>
-    <lastmod>2026-03-13</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-workflow-automation</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-predictive-inventory-management</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-marketing-content-generation</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-sales-pipeline-analysis</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-business-intelligence-dashboards</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-contract-review-systems</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-customer-sentiment-analysis</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-email-response-automation</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-pricing-optimization</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-employee-training-systems</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-supply-chain-forecasting</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-financial-forecasting</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://weareinovics-2uo.caffeine.xyz/impact-stories/ai-decision-support-for-leadership</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

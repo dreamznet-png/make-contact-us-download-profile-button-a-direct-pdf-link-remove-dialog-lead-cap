@@ -1,3 +1,4 @@
+import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -5,6 +6,12 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function BusinessGrowthInfrastructurePage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.BUSINESS_GROWTH_INFRASTRUCTURE];
+  useSEO({
+    title: "Business Growth Infrastructure | Indian SMEs | INOVICS",
+    description:
+      "Why Indian SMEs need operational infrastructure — not just sales tactics — to grow sustainably. Build the systems that support long-term expansion.",
+    url: "/insights/business-growth-infrastructure",
+  });
 
   return (
     <InsightArticleLayout

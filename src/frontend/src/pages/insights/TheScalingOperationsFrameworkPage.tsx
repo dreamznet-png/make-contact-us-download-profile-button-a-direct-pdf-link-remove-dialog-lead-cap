@@ -1,3 +1,4 @@
+import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -5,6 +6,12 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function TheScalingOperationsFrameworkPage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.THE_SCALING_OPERATIONS_FRAMEWORK];
+  useSEO({
+    title: "The Scaling Operations Framework | INOVICS India",
+    description:
+      "A structured framework for scaling Indian business operations. Strategy, process, technology, and automation layers for SME growth.",
+    url: "/insights/the-scaling-operations-framework",
+  });
 
   return (
     <InsightArticleLayout

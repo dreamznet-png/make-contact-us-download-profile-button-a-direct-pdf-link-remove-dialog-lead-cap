@@ -1,3 +1,4 @@
+import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -5,6 +6,12 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function WhyGrowthBreaksWeakInfrastructurePage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.WHY_GROWTH_BREAKS_WEAK_INFRASTRUCTURE];
+  useSEO({
+    title: "Why Growth Breaks Weak Infrastructure | INOVICS",
+    description:
+      "How rapid growth exposes operational weaknesses in Indian SMEs. Build the infrastructure your business needs to scale without breaking.",
+    url: "/insights/why-growth-breaks-weak-infrastructure",
+  });
 
   return (
     <InsightArticleLayout

@@ -1,3 +1,4 @@
+import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -5,6 +6,12 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function ExcelIsNotABusinessSystemPage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.EXCEL_IS_NOT_A_BUSINESS_SYSTEM];
+  useSEO({
+    title: "Excel Is Not a Business System | SME India | INOVICS",
+    description:
+      "Why Indian SMEs relying on Excel are limiting growth. How structured business systems replace spreadsheets for scalable operations.",
+    url: "/insights/excel-is-not-a-business-system",
+  });
 
   return (
     <InsightArticleLayout
