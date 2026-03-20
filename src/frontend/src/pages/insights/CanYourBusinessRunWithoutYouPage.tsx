@@ -1,4 +1,3 @@
-import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -6,12 +5,6 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function CanYourBusinessRunWithoutYouPage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.CAN_YOUR_BUSINESS_RUN_WITHOUT_YOU];
-  useSEO({
-    title: "Can Your Business Run Without You? | INOVICS India",
-    description:
-      "A self-assessment for Indian founders: can your business operate without your daily involvement? Build systems for true operational independence.",
-    url: "/insights/can-your-business-run-without-you",
-  });
 
   return (
     <InsightArticleLayout

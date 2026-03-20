@@ -1,4 +1,3 @@
-import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -6,12 +5,6 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function TheHiddenCostOfManualReportingPage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.THE_HIDDEN_COST_OF_MANUAL_REPORTING];
-  useSEO({
-    title: "Hidden Cost of Manual Reporting | SME India | INOVICS",
-    description:
-      "Manual MIS reporting wastes time and hides critical business insights. The real cost for Indian SMEs and how AI reporting solves it.",
-    url: "/insights/the-hidden-cost-of-manual-reporting",
-  });
 
   return (
     <InsightArticleLayout

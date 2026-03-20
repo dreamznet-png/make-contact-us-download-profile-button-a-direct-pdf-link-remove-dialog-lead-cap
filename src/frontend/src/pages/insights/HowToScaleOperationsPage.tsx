@@ -1,16 +1,9 @@
-import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
 
 export function HowToScaleOperationsPage() {
   const article = INSIGHT_ARTICLES[INSIGHT_SLUGS.HOW_TO_SCALE_OPERATIONS];
-  useSEO({
-    title: "How to Scale Operations | Indian Business Growth | INOVICS",
-    description:
-      "Practical guide to scaling business operations in India. Build repeatable processes, delegate, and leverage automation to grow without chaos.",
-    url: "/insights/how-to-scale-operations",
-  });
 
   return (
     <InsightArticleLayout

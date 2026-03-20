@@ -1,4 +1,3 @@
-import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -6,12 +5,6 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function HowToScaleABusinessWithoutChaosPage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.HOW_TO_SCALE_A_BUSINESS_WITHOUT_CHAOS];
-  useSEO({
-    title: "Scale Business Without Chaos | SME Growth | INOVICS",
-    description:
-      "Why growth creates operational chaos — and how Indian SMEs transition from people-driven to system-driven operations for sustainable scaling.",
-    url: "/insights/how-to-scale-a-business-without-chaos",
-  });
 
   return (
     <InsightArticleLayout

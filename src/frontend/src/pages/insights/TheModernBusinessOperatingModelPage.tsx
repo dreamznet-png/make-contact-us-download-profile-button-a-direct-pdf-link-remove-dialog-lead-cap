@@ -1,4 +1,3 @@
-import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -6,12 +5,6 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function TheModernBusinessOperatingModelPage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.THE_MODERN_BUSINESS_OPERATING_MODEL];
-  useSEO({
-    title: "Modern Business Operating Model | INOVICS India",
-    description:
-      "How Indian businesses are redesigning operating models for the digital era. Cross-functional collaboration, AI tools, and data-driven decisions.",
-    url: "/insights/the-modern-business-operating-model",
-  });
 
   return (
     <InsightArticleLayout

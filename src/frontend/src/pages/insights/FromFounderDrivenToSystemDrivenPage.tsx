@@ -1,4 +1,3 @@
-import { useSEO } from "@/hooks/useSEO";
 import { InsightArticleLayout } from "./components/InsightArticleLayout";
 import { INSIGHT_ARTICLES } from "./insightArticles";
 import { INSIGHT_SLUGS } from "./insightSlugs";
@@ -6,12 +5,6 @@ import { INSIGHT_SLUGS } from "./insightSlugs";
 export function FromFounderDrivenToSystemDrivenPage() {
   const article =
     INSIGHT_ARTICLES[INSIGHT_SLUGS.FROM_FOUNDER_DRIVEN_TO_SYSTEM_DRIVEN];
-  useSEO({
-    title: "Founder-Driven to System-Driven | INOVICS India",
-    description:
-      "How Indian founders transition from doing everything themselves to building systems that run the business. The path to operational independence.",
-    url: "/insights/from-founder-driven-to-system-driven",
-  });
 
   return (
     <InsightArticleLayout
